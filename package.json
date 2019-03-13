@@ -18,6 +18,7 @@
     "url": "http://jesusprubio.dev"
   },
   "files": [
+    "artifacts",
     "bin",
     "index.js"
   ],
