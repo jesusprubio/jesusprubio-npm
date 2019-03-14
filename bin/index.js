@@ -19,7 +19,10 @@ const chalk = require('chalk');
 const ora = require('ora');
 const CFonts = require('cfonts');
 
-CFonts.say('Hi world! :)');
+CFonts.say('Hi world! :)', {
+  letterSpacing: 0.5,
+	lineHeight: 0.5
+});
 // eslint-disable-next-line no-console
 console.log(`${link(' 🏴 ‍☠️', chalk.keyword('orange')(site))}\n`);
 
