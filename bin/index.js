@@ -11,30 +11,39 @@
 
 'use strict';
 
+const path = require('path');
+
 const { site, twitter } = require('..');
+
 const opn = require('opn');
 const link = require('terminal-link');
 const chalk = require('chalk');
 const play = require('audio-play');
 const load = require('audio-loader');
 const ora = require('ora');
+const CFonts = require('cfonts');
+// TODO: Change for a promise based solution when we have top level await.
+const sleep = require('system-sleep');
 
 
-load('./artifacts/waves.mp3').then(play);
+load(path.resolve(__dirname, '../artifacts/waves.mp3')).then(play);
 
+CFonts.say('Hi world! :)');
 // eslint-disable-next-line no-console
-console.log(`\t${link(' 🏴 ‍☠️', chalk.keyword('orange')(site))}\n`);
+console.log(`${link(' 🏴 ‍☠️', chalk.keyword('orange')(site))}\n`);
 
-const spinner = ora('Loading unicorns').start();
+const spinner = ora('Loading unicorns\n\n').start();
 spinner.color = 'green';
 
-setTimeout(() => {
-  spinner.color = 'magenta';
-  spinner.text = 'Loading rainbows';
-}, 1000);
+sleep(1000);
 
-opn(twitter).then(() => {
-  spinner.stop();
-  // eslint-disable-next-line no-console
-  console.log(chalk.keyword('grey')('😽\n'));
-});
+spinner.color = 'magenta';
+spinner.text = 'Loading rainbows\n\n';
+
+opn(twitter)
+
+sleep(1000);
+
+spinner.stop();
+// eslint-disable-next-line no-console
+console.log(chalk.keyword('grey')('😽\n'));
