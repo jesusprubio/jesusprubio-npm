@@ -18,7 +18,6 @@
     "url": "http://jesusprubio.dev"
   },
   "files": [
-    "artifacts",
     "bin",
     "index.js"
   ],
@@ -38,13 +37,10 @@
     "release": "np"
   },
   "dependencies": {
-    "audio-loader": "^1.0.3",
-    "audio-play": "^2.2.1",
     "cfonts": "^2.4.2",
     "chalk": "^2.4.2",
     "opn": "^5.4.0",
     "ora": "^3.2.0",
-    "system-sleep": "^1.3.6",
     "terminal-link": "^1.2.0"
   },
   "devDependencies": {
